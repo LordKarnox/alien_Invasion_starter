@@ -2,6 +2,7 @@ import sys
 import pygame
 from ship import Ship
 from settings import Settings
+from arsenal import Arsenal
 
 class AlienInvasion:
 
@@ -17,7 +18,11 @@ class AlienInvasion:
         self.running = True
         self.clock = pygame.time.Clock()
 
-        self.ship = Ship(self)
+        pygame.mixer.init()
+        self.laser_sound = pygame.mixer.Sound(str(self.settings.laser_sound))
+        self.laser_sound.set_volume(0.5)
+
+        self.ship = Ship(self, Arsenal(self))
 
     def run_game(self):
         
@@ -46,16 +51,23 @@ class AlienInvasion:
     
 
     def _check_keyup_events(self, event):
-        if event.key == pygame.K_RIGHT:
+        if event.key == pygame.K_d:
             self.ship.moving_right = False
-        elif event.key == pygame.K_LEFT:
+        elif event.key == pygame.K_a:
             self.ship.moving_left = False
 
     def _check_keydown_events(self, event):
-        if event.key == pygame.K_RIGHT:
+        if event.key == pygame.K_d:
             self.ship.moving_right = True
-        elif event.key == pygame.K_LEFT:
+        elif event.key == pygame.K_a:
             self.ship.moving_left = True
+        elif event.key == pygame.K_SPACE:
+            if self.ship.fire():
+                self.laser_sound.play()
+                self.laser_sound.fadeout(250)
+                
+
+
         elif event.key == pygame.K_q:
             self.running = False
             pygame.quit()
