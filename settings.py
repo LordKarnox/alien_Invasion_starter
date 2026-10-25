@@ -24,7 +24,7 @@ class Settings:
         self.alien_file = Path.cwd() / 'Assets' / 'images' / 'enemy_4.png'
         self.alien_w = 40
         self.alien_h = 40 
-        self.fleet_speed = 5
+        self.fleet_speed = 2
         self.fleet_direction = 1  # 1 for right, -1 for left
         self.fleet_dropspeed = 40  # How much the fleet drops down when it hits an edge
 
