@@ -27,9 +27,11 @@ class Alien(Sprite):
 
         if self.check_edges():
             self.settings.fleet_direction *= -1
+            self.y += self.settings.fleet_dropspeed  # Move down by the drop speed
 
         self.x += temp_speed * self.settings.fleet_direction
         self.rect.x = self.x
+        self.rect.y = self.y
 
     def check_edges(self):
         return (self.rect.right >= self.boundaries.right or self.rect.left <= self.boundaries.left)
