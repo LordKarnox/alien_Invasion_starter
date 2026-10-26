@@ -28,4 +28,5 @@ class Settings:
         self.fleet_direction = 1  # 1 for right, -1 for left
         self.fleet_dropspeed = 40  # How much the fleet drops down when it hits an edge
 
-
+        self.ship_limit = 3
+        self.impact_sound = Path.cwd() / 'Assets' / 'sound' / 'impactSound.mp3'

@@ -47,6 +47,13 @@ class Ship:
             return self.arsenal.fire_bullet()
         return False
 
-def __init__(self, ai_game):
-    self.screen = ai_game.screen
-    self.settings = ai_game.settings
+    def check_collisions(self, other_group):
+        return pygame.sprite.spritecollideany(self, other_group) is not None
+
+    def center_ship(self):
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
+        self.y = float(self.rect.y)
+        self.moving_right = False
+        self.moving_left = False
+
