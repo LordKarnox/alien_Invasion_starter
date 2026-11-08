@@ -46,6 +46,7 @@ class GameStats():
         # update max_score
         self._update_max_score()
         # update hi_score
+        self._update_hi_score()
 
     def _update_max_score(self) -> None:
         if self.score > self.max_score:
