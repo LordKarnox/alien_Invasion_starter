@@ -30,3 +30,12 @@ class Settings:
 
         self.ship_limit = 3
         self.impact_sound = Path.cwd() / 'Assets' / 'sound' / 'impactSound.mp3'
+
+        self.button_w = 200
+        self.button_h = 50
+        self.button_color = (0, 135, 50)
+
+        self.text_color = (255, 255, 255)
+        self.button_font_size = 48
+        self.HUD_font_size = 20
+        self.font_file = Path.cwd() / 'Assets' / 'Fonts' / 'Silkscreen' / 'Silkscreen-Bold.ttf'
