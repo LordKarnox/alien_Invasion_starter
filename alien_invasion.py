@@ -12,6 +12,7 @@ class AlienInvasion:
 
     def __init__(self):
         self.settings = Settings()
+        self.settings.initialize_dynamic_settings()
         self.game_stats = GameStats(self.settings.ship_limit)
         self.game_active = False
         pygame.init()
