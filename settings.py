@@ -43,6 +43,7 @@ class Settings:
 
         self.fleet_speed = 2
         self.fleet_dropspeed = 40  # How much the fleet drops down when it hits an edge
+        self.alien_points = 50
 
     def increase_difficulty(self):
         self.ship_speed *= self.difficulty_scale
