@@ -128,7 +128,7 @@ class AlienInvasion:
             self._reset_level()
             self.settings.increase_difficulty()
             self.game_stats.update_level()
-            # update HUD view
+            self.HUD.update_level()
 
     def _check_game_status(self):
         self.game_stats.ships_left -= 1
@@ -152,6 +152,7 @@ class AlienInvasion:
         self.settings.initialize_dynamic_settings()
         self.game_stats.reset_stats()
         self.HUD.update_scores()
+        self.HUD.update_level()
         self._reset_level()
         self.ship.center_ship()
         self.game_active = True
